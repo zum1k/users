@@ -32,16 +32,6 @@ public class FileManagerImpl implements FileManager {
   }
 
   @Override
-  public void writeString(String string, String filename) throws RepositoryException {
-    try (FileWriter fileWriter = new FileWriter(filename, true)) {
-      fileWriter.write(string + "\n");
-      fileWriter.flush();
-    } catch (IOException ex) {
-      throw new RepositoryException("Recording error: ", ex);
-    }
-  }
-
-  @Override
   public void writeStrings(List<String> strings, String fileName) throws RepositoryException {
     try (FileWriter fileWriter = new FileWriter(fileName, false)) {
       for (String string : strings) {

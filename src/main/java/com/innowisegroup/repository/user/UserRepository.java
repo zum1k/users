@@ -29,7 +29,7 @@ public class UserRepository implements Repository<User> {
     try {
       this.users = initializeUsers();
     } catch (RepositoryException e) {
-      e.fillInStackTrace();
+      System.out.println(e.getMessage());
     }
   }
 
